@@ -4,6 +4,14 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+      },
+    ],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new Dotenv({
@@ -13,6 +21,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, '..', './dist'),
     hot: true,
+    // For Docker Container
     // host: '0.0.0.0',
     // publicPath: '/'
   },

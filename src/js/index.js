@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from './app';
 
 const title = 'Page Title';
 
 ReactDOM.render(
   <App title={title} />,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
 
 module.hot.accept();
